@@ -1,5 +1,4 @@
 # LuV-Gym-Fitness
-Projeto desenvolvido para a disciplina de Desevolvimento Front-End Para Web 
 
 Bem-vindo ao repositório do projeto LuV Gym Fitness, um site moderno criado para apresentar a academia, sua estrutura, serviços, equipe e funcionalidades de forma visual, responsiva e profissional.
 
