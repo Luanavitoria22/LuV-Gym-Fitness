@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LuV Gym Fitness</title>
+<link rel="stylesheet" href="style.css" />
+
+<style>
+   /* Estilos Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-claro: #e3f2fd;
+  --azul-medio: #2196f3;
+  --azul-escuro: #0d47a1;
+  --azul-hover: #1976d2;
+  --cinza-fundo: #f4f8fc;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--cinza-fundo);
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+  background: var(--azul-escuro);
+  color: #fff;
+  padding: 20px 20px 10px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+  width: 165px;
+  filter: drop-shadow(0 0 5px #0005);
+}
+
+nav {
+  margin-top: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background: var(--azul-hover);
+}
+
+.sobre-banner {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sobre-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+
+.sobre-texto {
+  position: absolute;
+  left: 50px;
+  max-width: 480px;
+  color: #fff;
+  animation: slideIn 1.2s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.sobre-texto h2 {
+  font-size: 2.3rem;
+  color: #4aa0ff;
+  margin-bottom: 8px;
+}
+
+.sobre-texto p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+section {
+  padding: 70px 25px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.3rem;
+  color: var(--azul-escuro);
+  margin-bottom: 20px;
+}
+.sobre-info {
+  margin-top: 50px; 
+  padding-top: 50px 25px;
+  background-color: #f9f9f9;
+  text-align: center;
+  color: #0d47a1;
+}
+
+.sobre-info p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+
+}
+.sobre-info ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.sobre-info ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  padding-left: 0;
+  position: relative;
+  text-align: center;
+}
+.sobre-info ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #4aa0ff;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  background: var(--azul-medio);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--azul-hover);
+  transform: scale(1.05);
+}
+
+form {
+  max-width: 480px;
+  margin: 25px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  height: 120px;
+}
+ .equipe-cards {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+}
+
+.card {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e6e6e6;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #005bbb;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+#imc {
+  background: var(--azul-claro);
+  border-top: 3px solid var(--azul-medio);
+}
+
+.imc-container {
+  background: white;
+  padding: 30px;
+  max-width: 450px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.resultado-imc {
+  margin-top: 12px;
+  font-weight: bold;
+  color: var(--azul-escuro);
+}
+
+
+footer {
+  background: var(--azul-escuro);
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+  /* Rodapé */
+footer a {
+  color: #bbddff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .sobre-texto {
+    left: 20px;
+    max-width: 80%;
+  }
+  .sobre-banner {
+    height: 380px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="Logotipo-Projeto.png" class="logo" alt="Logo" />
+  <nav>
+    <ul>
+      <li><a href="#Sobre">Quem Somos</a></li>
+      <li><a href="#Modalidades">Modalidades</a></li>
+      <li><a href="#Funcionamento">Funcionamento</a></li>
+      <li><a href="#inscricao">Agendamento</a></li>
+    </ul>
+  </nav>
+</header>
+ <main>
+  <!-- Seção Sobre -->
+<section id="Sobre" class="sobre-banner">
+  <img src="Academia-Projeto.png" alt="Academia" />
+  <div class="sobre-texto">
+    <h2>Quem Somos</h2>
+    <p>A LuV Gym Fitness oferece estrutura moderna, com profissionais qualificados e um ambiente motivador para transformar sua saúde e bem‑estar.</p>
+  </div>
+</section>
+    <div class="sobre-info">
+  <h1>Venha nos conhecer e ter uma ótima experiência.</h1>
+  <ul>
+    <li>Armário rotativo</li>
+    <li>Ducha aquecida</li>
+    <li>Ar condicionado</li>
+    <li>Equipamentos modernos</li>
+  </ul>
+  </div>
+<!-- Seção Modalidades -->
+<section id="Modalidades">
+  <h2>Escolha sua Atividade Preferida</h2>
+
+  <div class="cards">
+    <div class="card">
+      <img src="Abdominais-Projeto.png" alt="Abdominal" />
+      <h3>Abdominal</h3>
+      <p>Fortaleça seu core com treinos intensos e eficientes.</p>
+      <button>Experimentar grátis</button>
+    </div>
+
+    <div class="card">
+      <img src="Spinning-Projeto.png" alt="Spinning"/>
+      <h3>Spinning</h3>
+      <p>Aulas de alta energia para condicionamento total.</p>
+      <button>Experimentar grátis</button>
+    </div>
+
+    <div class="card">
+      <img src="Pilates-projeto.png" alt="Pilates"/>
+      <h3>Pilates</h3>
+      <p>Melhore sua postura, flexibilidade e consciência corporal.</p>
+      <button>Experimentar grátis</button>
+    </div>
+    <div class="card">
+      <img src="Kickboxing-Projeto.png" alt="Kickboxing"/>
+      <h3>Kickboxing</h3>
+      <p>Arte marcial praticada como defesa pessoal, condicionamento ou esporte.</p>
+      <button>Experimentar grátis</button>
+    </div>
+
+    <div class="card">
+      <img src="Jump-Projeto.png" alt="Jump"/>
+      <h3>Jump</h3>
+      <p>Aulas divertidas para queima calórica intensa.</p>
+      <button>Experimentar grátis</button>
+    </div>
+     <div class="card">
+          <img src="Fitdance-Projeto.png" alt="Fitdance" />
+          <h3>Fitdance</h3>
+          <p>Diversão e movimento com coreografias animadas para todos os níveis.</p>
+          <button>Experimentar grátis</button>
+        </div>
+        <div class="card">
+          <img src="Bodycombat-Projeto.png" alt="BodyCombat" />
+          <h3>BodyCombat</h3>
+          <p>Movimentos inspirados em artes marciais para liberar o estresse e fortalecer o corpo.</p>
+          <button>Experimentar grátis</button>
+        </div>
+      </div>
+</section>
+  <!-- Seção Equipe -->
+       <section id="Equipe">
+    <h2>Conheça a equipe</h2>
+    <p>É bom contar com essa galera para tirar dúvidas,treinar e bater um papinho...</p>
+    <p>Identifique o pessoal pela cor da camiseta!</p>
+
+  <div class="equipe-cards">
+    <div class="card">
+      <img src="Recpção-Projeto.png" alt="Recepção"/>
+      <h3>Recepcionista</h3>
+      <p>Dúvidas sobre a operação da academia? Traga para o balcão.</p>
+    </div>
+    <div class="card">
+      <img src="Professor-Projeto.png" alt="Professor"/>
+      <h3>Professores</h3>
+      <p>Especialista em exercícios, ele monta treinos personalizados, conduz aulas coletivas e te impulsiona rumo aos seus objetivos.</p>
+    </div>
+      <div class="card">
+      <img src="Lider-Projeto.png" alt="Lider"/>
+      <h3>Líder da unidade</h3>
+      <p>Pessoa responsável pelo bom funcionamento da unidade está sempre disponível para te ajudar!</p>
+    </div>
+  </section>
+  
+<!-- Seção Funcionamento -->
+<section id="Funcionamento">
+  <h2>Horários de Funcionamento</h2>
+  <p>Segunda a Sexta: 6h às 22h | Sábado: 8h às 14h | Domingos e feriados: fechado</p>
+</section>
+ <!-- Calculo IMC -->
+<section id="imc">
+  <h2>Calcule seu IMC</h2>
+
+  <div class="imc-container">
+    <label>Nome:</label>
+    <input type="text" id="nomeIMC">
+
+    <label>Peso (kg):</label>
+    <input type="number" id="peso" step="0.01">
+
+    <label>Altura (m):</label>
+    <input type="number" id="altura" step="0.01">
+
+    <button onclick="calcularIMC()">Calcular</button>
+    <p id="resultadoIMC" class="resultado-imc"></p>
+  </div>
+</section>
+<script>
+function calcularIMC() {
+  let nome = document.getElementById("nomeIMC").value.trim();
+  let peso = parseFloat(document.getElementById("peso").value);
+  let altura = parseFloat(document.getElementById("altura").value);
+  let res = document.getElementById("resultadoIMC");
+
+  if (!nome || !peso || !altura || altura <= 0) {
+    res.textContent = "Preencha todos os campos corretamente.";
+    res.style.color = "red";
+    return;
+  }
+
+  let imc = peso / (altura * altura);
+  let texto;
+
+  if (imc < 18.5) texto = "abaixo do peso";
+  else if (imc < 24.9) texto = "peso normal";
+  else if (imc < 29.9) texto = "sobrepeso";
+  else texto = "obesidade";
+
+  res.style.color = "var(--azul-escuro)";
+  res.textContent = `${nome}, seu IMC é ${imc.toFixed(2)} — ${texto}.`;
+}
+</script>
+<!-- Seção Inscrição -->
+<section id="inscricao">
+  <h2>Agende sua Aula Experimental</h2>
+
+  <form>
+    <input type="text" placeholder="Nome" required />
+    <input type="email" placeholder="E-mail" required />
+    <input type="tel" placeholder="Telefone" required />
+    <textarea placeholder="Mensagem"></textarea>
+    <button>Enviar</button>
+  </form>
+</section>
+ </main>
+
+<footer>
+  <p>Contato: sac@luvgymfitness.com.br | (61) 99853-9063</p>
+  <p>Instagram | Facebook</p>
+  <p>© 2025 LuV Gym Fitness – Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
